@@ -136,8 +136,8 @@ public class IHMTestEnsembleTests extends junit.framework.TestCase{
         assertTrue(subComponents[1] instanceof JTextField);
         JTextField jt = (JTextField)subComponents[1];
         jt.setText(str);
-        // 		Point location = subComponents[1].getLocationOnScreen();
-        // 		mouseMoveAndClickClick(location.x,location.y);
+         		Point location = subComponents[1].getLocationOnScreen();
+         		mouseMoveAndClickClick(location.x,location.y);
         // 		typeLine(str, robot, false);
     }
 
@@ -149,8 +149,8 @@ public class IHMTestEnsembleTests extends junit.framework.TestCase{
         assertTrue(subComponents[1] instanceof JTextField);
         JTextField jt = (JTextField)subComponents[1];
         jt.setText(str);		
-        // 		Point location = subComponents[1].getLocationOnScreen();
-        // 		mouseMoveAndClickClick(location.x,location.y);
+        		Point location = subComponents[1].getLocationOnScreen();
+         		mouseMoveAndClickClick(location.x,location.y);
         // 		typeLine(str, robot, false);
     }
 
@@ -239,53 +239,54 @@ public class IHMTestEnsembleTests extends junit.framework.TestCase{
 
             if(array[i]>='a'&&array[i]<='z'){
                 robot.keyPress((int)array[i]-(int)'a'+65);
-                robot.delay(60);
+                robot.delay(220);
                 robot.keyRelease((int)array[i]-(int)'a'+65);
             }else if(array[i]==' '){
                 robot.keyPress(KeyEvent.VK_SPACE);
-                robot.delay(60);
+                robot.delay(220);
                 robot.keyRelease(KeyEvent.VK_SPACE);
             }else if(array[i]>='A'&&array[i]<='Z'){
-                robot.keyPress(KeyEvent.VK_SHIFT);
-                robot.delay(60);
+            //    robot.keyPress(KeyEvent.VK_SHIFT);
+                robot.delay(220);
                 robot.keyPress((int)array[i]-(int)'A'+65);
-                robot.delay(60);
+                robot.delay(220);
                 robot.keyRelease((int)array[i]-(int)'A'+65);
-                robot.delay(60);
-                robot.keyRelease(KeyEvent.VK_SHIFT);
+                robot.delay(220);
+            //    robot.keyReease(KeyEvent.VK_SHIFT);
             }else if(array[i]>='0'&&array[i]<='9'){
-                robot.keyPress(KeyEvent.VK_SHIFT);
-                robot.delay(60);
+            //    robot.keyPress(KeyEvent.VK_SHIFT);
+                robot.delay(220);
                 robot.keyPress(KeyEvent.VK_0+(int)(array[i]-'0'));
-                robot.delay(60);
+                robot.delay(220);
                 robot.keyRelease(KeyEvent.VK_0+(int)(array[i]-'0'));
-                robot.delay(60);            
-                robot.keyRelease(KeyEvent.VK_SHIFT);
+                robot.delay(220);            
+            //    robot.keyRelease(KeyEvent.VK_SHIFT);
             }
-            robot.delay(60);
+            robot.delay(220);
         }
     }
 
     public void mouseMoveAndClick(int x, int y){
         robot.mouseMove( x,y);
-        robot.delay(60);  
+        robot.delay(40);  
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(40);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(40);
     }//end mouseMoveAndClick
+    
 
-    public void mouseMoveAndClickClick(int x, int y){
+   public void mouseMoveAndClickClick(int x, int y){
         robot.mouseMove( x,y);
-        robot.delay(60);
+        robot.delay(40);
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(40);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(40);
         robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(40);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
+        robot.delay(40);
     }//end mouseMoveAndClickClick
 
     
